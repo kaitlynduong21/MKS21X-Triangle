@@ -28,16 +28,28 @@ public class Triangle {
   }
 
   public Point getVertex(int index) {
+    Point vertex;
     if (index == 0) {
-      Point vertex = new Point(v1);
-      return vertex;
-    }
-    if (index == 1) {
-      Point vertex = new Point (v2);
-      return vertex;
+      vertex = new Point(v1);
     } else {
-      Point vertex = new Point (v3);
-      return vertex;
+      if (index == 1) {
+      vertex = new Point (v2);
+      } else {
+      vertex = new Point (v3);
+      }
     }
+    return vertex;
   }//return a COPY of the specified Point (0,1, or 2)
+
+  public void setVertex(int index, Point newP) {
+    if (index == 0) {
+      v1 = newP;
+    } else {
+      if (index == 1) {
+      v2 = newP;
+      } else {
+        v3 = newP;
+      }
+    }
+  }
 }
